@@ -1,5 +1,8 @@
 import { initializeApp} from 'firebase/app';
-import { getFirestore, collection, getDocs } from 'firebase/firestore';
+import { getFirestore, collection, getDocs, addDoc } from 'firebase/firestore';
+
+const addBookForm = document.querySelector('.add');
+const deleteBookForm = document.querySelector('.delete');
 
 const firebaseConfig = {
     apiKey: "AIzaSyCTUrZs6gMDcWs3BU_R77Xnt8nj1i0lqgQ",
@@ -26,7 +29,7 @@ const colRef = collection(db, 'books')
 
 getDocs(colRef)
 .then((snapshot) =>{
-   let books = [];
+    let books = [];
    snapshot.docs.forEach((doc) =>{
     books.push({...doc.data(), id: doc.id })
    })
@@ -35,3 +38,23 @@ getDocs(colRef)
 .catch((error) =>{
     console.log(error);
 });
+
+// adding the event listerner to the add book form
+
+addBookForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+    addDoc(colRef, {
+        title: addBookForm.title.value.trim(),
+        author: addBookForm.author.value.trim()
+    })
+    .then(() =>{
+addBookForm.reset();
+
+    })
+});
+
+// adding the event listerner to the delete book form
+
+deleteBookForm.addEventListener('submit', (e) =>{
+    e.preventDefault();
+})
