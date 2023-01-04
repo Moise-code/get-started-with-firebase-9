@@ -1,0 +1,25 @@
+{
+  "name": "get-started-with-firebase-9",
+  "version": "1.0.0",
+  "description": "In this project, I will showcaing everything you may need to get started with firebase.\r ## what is required to run this project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Moise-code/get-started-with-firebase-9.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Moise-code/get-started-with-firebase-9/issues"
+  },
+  "homepage": "https://github.com/Moise-code/get-started-with-firebase-9#readme",
+  "dependencies": {
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
+  }
+}
