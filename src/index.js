@@ -34,4 +34,4 @@ getDocs(colRef)
 })
 .catch((error) =>{
     console.log(error);
-})
+});
